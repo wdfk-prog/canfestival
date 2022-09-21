@@ -21,6 +21,10 @@
 #License along with this library; if not, write to the Free Software
 #Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
 
+# encoding=utf8  
+import sys  
+reload(sys)  
+sys.setdefaultencoding('utf8') 
 
 import node
 from node import nosub, var, array, rec, plurivar, pluriarray, plurirec

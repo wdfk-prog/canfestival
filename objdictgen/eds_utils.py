@@ -339,10 +339,10 @@ def ParseEDSFile(filepath):
                             raise SyntaxError, _("\"%s\" is not a valid value for attribute \"%s\" of section \"[%s]\"")%(value, keyname, section_name)
                     elif value.isdigit() or value.startswith("-") and value[1:].isdigit():
                         # Third case, value is a number and starts with "0", then it's an octal value
-                        if value.startswith("0") or value.startswith("-0"):
-                            computed_value = int(value, 8)
-                        # Forth case, value is a number and don't start with "0", then it's a decimal value
-                        else:
+                        # if value.startswith("0") or value.startswith("-0"):
+                        #     computed_value = int(value, 8)
+                        # # Forth case, value is a number and don't start with "0", then it's a decimal value
+                        # else:
                             computed_value = int(value)
                     # In any other case, we keep string value
                     else:

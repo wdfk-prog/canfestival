@@ -5,12 +5,17 @@ MappingDictionary for DS-402
 """
 
 Mapping = {
+    0x603F : {"name" : "Error code", "struct" : var, "need" : False, "values" : 
+                [{"name" : "Error code", "type" : 0x06, "access" : 'ro', "pdo" : True}]},
 
     0x6040 : {"name" : "Controlword", "struct" : var, "need" : False, "values" :
                 [{"name" : "Controlword", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
 
     0x6041 : {"name" : "Statusword", "struct" : var, "need" : False, "values" :
                 [{"name" : "Statusword", "type" : 0x06, "access" : 'ro', "pdo" : True}]},
+    
+    0x605B : {"name" : "Shutdown option code", "struct" : var, "need" : False, "values" :
+                [{"name" : "Shutdown option code", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
 
     0x6060 : {"name" : "Modes of operation", "struct" : var, "need" : False, "values" :
                 [{"name" : "Modes of operation", "type" : 0x02, "access" : 'rw', "pdo" : True}]},
@@ -20,6 +25,9 @@ Mapping = {
 
     0x6062 : {"name" : "Position demannd value", "struct" : var, "need" : False, "values" :
                 [{"name" : "Position demannd value", "type" : 0x04, "access" : 'ro', "pdo" : True}]},
+
+    0x6063 : {"name" : "Position actual value", "struct" : var, "need" : False, "values" :
+                [{"name" : "Position actual value", "type" : 0x07, "access" : 'ro', "pdo" : True}]},
 
     0x6064 : {"name" : "Position actual value", "struct" : var, "need" : False, "values" :
                 [{"name" : "Position actual value", "type" : 0x04, "access" : 'ro', "pdo" : True}]},
@@ -42,6 +50,24 @@ Mapping = {
     0x606C : {"name" : "Velocity actual value", "struct" : var, "need" : False, "values" :
                 [{"name" : "Velocity actual value", "type" : 0x04, "access" : 'ro', "pdo" : True}]},
 
+    0x606D : {"name" : "Velocity window", "struct" : var, "need" : False, "values" :
+                [{"name" : "Velocity window", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
+    
+    0x606E : {"name" : "Velocity window time", "struct"  : var, "need" : False, "values" :
+                [{"name" : "Velocity window time", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
+    
+    0x606F : {"name" : "Velocity threshold", "struct"  : var, "need" : False, "values" :
+                [{"name" : "Velocity threshold", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
+    
+    0x6071 : {"name" : "Target torque", "struct"  : var, "need" : False, "values" :
+                [{"name" : "Target torque", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
+    
+    0x6072 : {"name" : "Max torque", "struct"  : var, "need" : False, "values" :
+                [{"name" : "Max torque", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
+    
+    0x6074 : {"name" : "Torque demand value", "struct"  : var, "need" : False, "values" :
+                [{"name" : "Torque demand value", "type" : 0x06, "access" : 'ro', "pdo" : True}]},
+        
     0x6078 : {"name" : "Current actual value", "struct" : var, "need" : False, "values" :
                 [{"name" : "Current actual value", "type" : 0x03, "access" : 'ro', "pdo" : True}]},
 
@@ -59,6 +85,9 @@ Mapping = {
     0x607F : {"name" : "Maximal profile velocity", "struct" : var, "need" : False, "values" :
                 [{"name" : "Maximal profile velocity", "type" : 0x07, "access" : 'rw', "pdo" : False}]},
 
+    0x6080 : {"name" : "Max motor speed", "struct" : var, "need" : False, "values" :
+                [{"name" : "Max motor speed", "type" : 0x07, "access" : 'rw', "pdo" : False}]},
+
     0x6081 : {"name" : "Profile velocity", "struct" : var, "need" : False, "values" :
                 [{"name" : "Profile velocity", "type" : 0x07, "access" : 'rw', "pdo" : True}]},
 
@@ -73,6 +102,9 @@ Mapping = {
 
     0x6086 : {"name" : "Motion profile type", "struct" : var, "need" : False, "values" :
                 [{"name" : "Motion profile type", "type" : 0x03, "access" : 'rw', "pdo" : True}]},
+    
+    0x6087 : {"name" : "Torque slope", "struct" : var, "need" : False, "values" :
+                [{"name" : "Torque slope", "type" : 0x07, "access" : 'rw', "pdo" : True}]},
 
     0x6089 : {"name" : "Position notation index", "struct" : var, "need" : False, "values" :
                 [{"name" : "Position notation index", "type" : 0x02, "access" : 'rw', "pdo" : False}]},
@@ -91,6 +123,11 @@ Mapping = {
 
     0x608E : {"name" : "Acceleraion dimention index", "struct" : var, "need" : False, "values" :
                 [{"name" : "Acceleraion dimention index", "type" : 0x08, "access" : 'rw', "pdo" : False}]},
+   
+    0x6093 : {"name" : "Position factor", "struct" : array, "need" : False, "values" :
+                [{"name" : "Number of entries", "type" : 0x05, "access" : 'ro', "pdo" : False},
+                 {"name" : "Numerator", "type" : 0x07, "access" : 'rw', "pdo" : True},
+                 {"name" : "Feed constant", "type" : 0x07, "access" : 'rw', "pdo" : True}]},
 
     0x6098 : {"name" : "Homing method", "struct" : var, "need" : False, "values" :
                 [{"name" : "Homing method", "type" : 0x02, "access" : 'rw', "pdo" : True}]},
@@ -102,7 +139,24 @@ Mapping = {
 
     0x609A : {"name" : "Homing acceleration", "struct" : var, "need" : False, "values" :
                 [{"name" : "Homing acceleration", "type" : 0x07, "access" : 'rw', "pdo" : True}]},
-
+   
+    0x60C1 : {"name" : "Interpolation data record", "struct" : array, "need" : False, "values" :
+                [{"name" : "number of entries", "type" : 0x05, "access" : 'ro', "pdo" : False},
+                 {"name" : "Pos_Cmd", "type" : 0x07, "access" : 'rw', "pdo" : True}]},
+    
+    0x60C2 : {"name" : "Interpolation data record", "struct" : array, "need" : False, "values" :
+                [{"name" : "number of entries", "type" : 0x05, "access" : 'ro', "pdo" : False},
+                 {"name" : "(Interpolation time index", "type" : 0x05, "access" : 'rw', "pdo" : True}]},
+    
+    0x60C5 : {"name" : "Max acceleration", "struct" : var, "need" : False, "values" :
+                [{"name" : "Max acceleration", "type" : 0x07, "access" : 'rw', "pdo" : True}]},
+    
+    0x60C6 : {"name" : "Max deceleration", "struct" : var, "need" : False, "values" :
+                [{"name" : "Max acceleration", "type" : 0x07, "access" : 'rw', "pdo" : True}]},
+    
+    0x60F4 : {"name" : "Following error actual value", "struct" : var, "need" : False, "values" :
+                [{"name" : "Following error actual value", "type" : 0x07, "access" : 'ro', "pdo" : True}]},
+    
     0x60F6 : {"name" : "Current control parameter set", "struct" : array, "need" : False, "values" :
                 [{"name" : "Number of entries", "type" : 0x05, "access" : 'ro', "pdo" : False},
                  {"name" : "Current regulator P-gain", "type" : 0x03, "access" : 'rw', "pdo" : True},
@@ -120,6 +174,12 @@ Mapping = {
 		 {"name" : "Position regulator D-gain", "type" : 0x03, "access" : 'rw', "pdo" : True},
                  {"name" : "Velocity feed forward factor", "type" : 0x06, "access" : 'rw', "pdo" : True},
                  {"name" : "Acceleration feed forward factor", "type" : 0x06, "access" : 'rw', "pdo" : True}]},
+   
+    0x60FC : {"name" : "Position demand value", "struct" : var, "need" : False, "values" :
+                [{"name" : "Position demand value", "type" : 0x07, "access" : 'ro', "pdo" : True}]},
+    
+    0x60FD : {"name" : "Digital inputs", "struct" : var, "need" : False, "values" :
+                [{"name" : "Digital inputs ", "type" : 0x07, "access" : 'ro', "pdo" : True}]},
 
     0x60FF : {"name" : "Target velocity", "struct" : var, "need" : False, "values" :
                 [{"name" : "Target velocity", "type" : 0x04, "access" : 'rw', "pdo" : True}]},

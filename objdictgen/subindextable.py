@@ -29,8 +29,8 @@ from commondialogs import *
 
 from node import OD_Subindex, OD_MultipleSubindexes, OD_IdenticalSubindexes, OD_IdenticalIndexes
 
-ColSizes = [75, 250, 150, 125, 100, 60, 250]
-ColAlignements = [wx.ALIGN_CENTER, wx.ALIGN_LEFT, wx.ALIGN_CENTER, wx.ALIGN_RIGHT, wx.ALIGN_CENTER, wx.ALIGN_CENTER, wx.ALIGN_LEFT]
+ColSizes = [75, 250, 150, 125, 100, 60, 250, 60]
+ColAlignements = [wx.ALIGN_CENTER, wx.ALIGN_LEFT, wx.ALIGN_CENTER, wx.ALIGN_RIGHT, wx.ALIGN_CENTER, wx.ALIGN_CENTER, wx.ALIGN_LEFT, wx.ALIGN_LEFT]
 
 def GetAccessList(write=True):
     _ = lambda x : x
@@ -79,7 +79,7 @@ INDEXCHOICE_SECTIONS = {
 
 def GetSubindexTableColnames():
     _ = lambda x : x
-    return [_("subindex"), _("name"), _("type"), _("value"), _("access"), _("save"), _("comment")]
+    return [_("subindex"), _("name"), _("type"), _("value"), _("access"), _("save"), _("comment"), _("buffer_size")]
 
 DictionaryOrganisation = [
     {"minIndex" : 0x0001, "maxIndex" : 0x0FFF, "name" : "Data Type Definitions"},
@@ -456,9 +456,9 @@ class EditingPanel(wx.SplitterWindow):
         self.SubindexGrid = wx.grid.Grid(id=ID_EDITINGPANELSUBINDEXGRID,
               name='SubindexGrid', parent=self.SubindexGridPanel, pos=wx.Point(0,
               0), size=wx.Size(-1, -1), style=0)
-        self.SubindexGrid.SetFont(wx.Font(12, wx.SWISS, wx.NORMAL, wx.NORMAL, False,
+        self.SubindexGrid.SetFont(wx.Font(12, 77, wx.NORMAL, wx.NORMAL, False,
               'Sans'))
-        self.SubindexGrid.SetLabelFont(wx.Font(10, wx.SWISS, wx.NORMAL, wx.NORMAL,
+        self.SubindexGrid.SetLabelFont(wx.Font(10, 77, wx.NORMAL, wx.NORMAL,
               False, 'Sans'))
         self.SubindexGrid.Bind(wx.grid.EVT_GRID_CELL_CHANGE,
               self.OnSubindexGridCellChange)
